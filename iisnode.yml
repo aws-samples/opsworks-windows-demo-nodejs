@@ -1,0 +1,8 @@
+﻿node_env: production
+debuggingEnabled: false
+loggingEnabled: true
+# This will print Stack traces on application error.
+# Enabled for development/example proposes only.
+devErrorsEnabled: true
+
+

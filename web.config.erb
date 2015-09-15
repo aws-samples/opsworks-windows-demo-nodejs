@@ -1,0 +1,31 @@
+<configuration>
+    <system.webServer>
+        <handlers>
+            <add name="iisnode" path="index.js" verb="*" modules="iisnode" />
+        </handlers>
+
+        <iisnode nodeProcessCommandLine="&quot;%programfiles(x86)%\nodejs\node.exe&quot;"
+                 watchedFiles="*.js;node_modules\*;routes\*.js;views\*.jade;middleware\*.js" />
+
+        <rewrite>
+            <rules>
+                <rule name="hello">
+                    <match url="/*" />
+                    <action type="Rewrite" url="/index.js" />
+                </rule>
+            </rules>
+        </rewrite>
+    </system.webServer>
+    <appSettings>
+        <% if @environment %>
+          <% @environment.each do |key,value| %>
+            <add key="<%= key %>" value="<%= value %>" />
+          <% end %>
+        <% end %>
+        <%if @settings %>
+          <% @settings.each do |key,value| %>
+            <add key="<%= key %>" value="<%= value %>" />
+          <% end %>
+        <% end %>
+    </appSettings>
+</configuration>

@@ -1,14 +1,14 @@
 include header.html
 
-#x.container
-  #x.hero-unit
+.container
+  .hero-unit
     p
       | This app runs on #{hostname} (#{os}). Your request came from #{agent}.
       | The system time is #{time.toLocaleString()}.
       |  <strong>Page rendered using Node.js version #{nodeversion}</strong>.
 
 #form-section.container
-  #x.hero-unit
+  .hero-unit
     form(method="post" class="comment-form")
       label(for="comment") Leave a comment
         input(type="text", name="comment" required="true" autocomplete="off")
@@ -20,8 +20,8 @@ include header.html
           p(class="comment-content")= comment.text
           p(class="comment-date")= (new Date(comment.date)).toLocaleString()
 
-#x.container
-  #x.hero-unit
+.container
+  .hero-unit
     p
       | Contact site admin via: <a href="mailto:#{admin}">#{admin}</a>
 

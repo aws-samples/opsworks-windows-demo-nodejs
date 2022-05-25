@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AWS OpsWorks Sample App</title>
+  <style type="text/css" media="screen">
+  body {
+    background-image: url("images/white_wall_hash.png");
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 940px;
+  }
+
+  .navbar-fixed-top {
+    z-index: 1030;
+    margin-bottom: 0;
+    overflow: visible;
+  }
+
+  .navbar-fixed-top .navbar-inner {
+    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    padding-left: 0;
+    padding-right: 0;
+    min-height: 40px;
+    background-color: #F9F9F9;
+    background-image: -moz-linear-gradient(top, #fff, #f2f2f2);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FFF), to(#F2F2F2));
+    background-image: -webkit-linear-gradient(top, #FFF, #F2F2F2);
+    background-image: -o-linear-gradient(top, #fff, #f2f2f2);
+    background-image: linear-gradient(to bottom, #FFF, #F2F2F2);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2', GradientType=0);
+    border-bottom: 1px solid #D4D4D4;
+  }
+  .brand {
+    display: block;
+    padding: 10px 20px 10px 0;
+    margin-left: -20px;
+    font-size: 20px;
+    font-weight: 200;
+    color: #777;
+    text-shadow: 0 1px 0 #FFF;
+    margin: 0;
+  }
+
+  .hero-unit {
+    margin-top: 30px;
+    background-color: #FFF;
+    border: 1px solid #EEE;
+    padding: 30px 60px;
+    margin-bottom: 30px;
+    font-weight: 200;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+  }
+
+  h1 {
+    font-size: 32px;
+    margin: 16px 0;
+    font-weight: bold;
+    line-height: 40px;
+    text-rendering: optimizelegibility;
+  }
+
+  .hero-unit h2 {
+    font-size: 24px;
+    margin: 16px 0;
+    line-height: 32px;
+    font-weight: normal;
+  }
+
+  a  {
+    color: #777;
+    text-decoration: none;
+  }
+
+  .robot {
+    background: url("images/sticker.png") left center no-repeat;
+    height: 360px;
+    padding-left: 360px;
+  }
+
+  .logo {
+    background: url("images/logo.png") right center no-repeat;
+    height: 120px;
+    margin-top: 80px;
+  }
+
+  .credits {
+    position: relative;
+    top: 70px;
+    right: 0px;
+    float: right;
+  }
+
+  .comment-form label {
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  .comment-form input[type="text"] {
+    width: 50%;
+    color: #585858;
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .comment-form input[type="text"]:focus {
+    outline: 0;
+    border: 1px solid #c6c7cc;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+  }
+
+  .comment-form input[type="submit"] {
+    margin: 5px 0;
+    padding: 10px 20px;
+    background: #3399CC;
+    color: white;
+    font-size: 16px;
+    border: none;
+  }
+
+  .comment-form input[type="submit"]:hover {
+    background: #67B8DE;
+  }
+
+  .comment-form input[type="submit"]:active {
+    box-shadow: 0px 2px 0 #3399CC;
+    transform: translateY(3px);
+  }
+
+  .comment-form input[type="submit"]:focus {
+    outline: 0;
+  }
+
+  .comments {
+    list-style-type: none;
+    font-size: 14px;
+    padding-left: 5px;
+  }
+
+  .comments p {
+    margin: 0;
+  }
+
+  .comments li {
+    margin: 14px 0;
+    border-left: 3px solid #67B8DE;
+    padding-left: 10px;
+  }
+
+  .comment-date {
+    color: #D8D8D8;
+  }
+  .comment-content {
+  }
+
+
+  </style>
+</head>
+<body>
+  <header class="navbar navbar-fixed-top">
+    <nav class="navbar-inner">
+      <div class="container">
+        <p class="brand">AWS OpsWorks - Sample App</p>
+      </div>
+    </nav>
+  </header>
+  <div id="main" role="main">
+    <div class="container">
+     <div class="hero-unit">
+      <div class="robot">
+        <h1>Congratulations!</h1>
+        <h2>
+          You just deployed your first app with<br/>
+          AWS OpsWorks.
+        </h2>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://aws.amazon.com/opsworks/" data-text="Look mum. I just successfully deployed with AWS OpsWorks!" data-size="large" data-related="AWSOpsWorks" data-count="none">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <a href="https://twitter.com/AWSOpsWorks" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @AWSOpsWorks</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <p class="logo">
+          <span class="credits">Made in Berlin</span>
+        </p>
+      </div>
+     </div>
